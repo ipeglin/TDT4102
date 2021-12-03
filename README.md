@@ -1,0 +1,2 @@
+# TDT4102 - Procedural and Object-Oriented Programming
+This repository contains assignments from the course [TDT4102](https://www.ntnu.edu/studies/courses/TDT4102) at [NTNU, Trondheim](https://www.ntnu.edu).
