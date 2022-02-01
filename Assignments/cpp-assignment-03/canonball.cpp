@@ -25,11 +25,13 @@ double posY(double init_position, double init_velocity, double time) {
 }
 
 void print_time(double time) {
-    int hours{int(time / 3600)};
-    time = int(time) % (hours * 60);
-    /*
-        Redo this
-    */
+    int temp{int(time)};
+    temp = temp % 3600;
+    int minutes{temp / 60};
+    int seconds{temp % 60};
+
+    cout << minutes << " " << (minutes == 1 ? "minutt" : "minutter") << " ";
+    cout << seconds << " " << (seconds == 1 ? "sekund" : "sekunder") << endl;
 }
 
 double flight_time(double init_velocityY) {

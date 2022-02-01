@@ -17,8 +17,9 @@ int main() {
     int max_random_int{15};
     int min_random_int{3};
 
-    srand(unsigned(time(nullptr)));
+    srand(unsigned(time(nullptr))); // Timebased seed to generate random int
 
+    // Testing values
     test_deviation(velY(25, 2.5), 0.475, max_error, "velY(25, 2.5)");
     test_deviation(velY(25, 5.0), -24.05, max_error, "velY(25, 5.0)");
 
@@ -38,7 +39,7 @@ int main() {
     play_target_practice();
 }
 
-
+// Function returning deviation from expected output
 void test_deviation(double compare_operand, double to_operand, double max_error, string name) {
     double deviation{abs(to_operand) - abs(compare_operand)};
     cout << ((deviation > max_error) ? "Ikke korrekt" : name + " = " + to_string(to_operand) + " | Korrekt") << endl;
