@@ -92,11 +92,10 @@ void play_target_practice() {
         cout << "\n\nVinkel for skuddet (grader): ";
         cin >> angle_input;
 
-        cout << endl
-             << "Startfart for skuddet (m/s): ";
+        cout << "Startfart for skuddet (m/s): ";
         cin >> velocity_input;
 
-        vector<double> velocity_vec{get_velocity_vector(angle_input, velocity_input)};
+        vector<double> velocity_vec{get_velocity_vector(deg_to_rad(angle_input), velocity_input)};
         double hit_difference{target_practice(target_position, velocity_vec[0], velocity_vec[1])};
         double flight_duration{flight_time(velocity_vec[1])};
 
@@ -111,7 +110,7 @@ void play_target_practice() {
                  << "  The canonball took " << flight_duration << "s to hit." << endl
                  << "-------------------------" << endl;
 
-        if (hit_difference < 5) {
+        if (abs(hit_difference) < 5) {
             cout << "HIT!!!" << endl;
             break;
         } else {
