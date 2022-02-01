@@ -3,6 +3,8 @@
 #include <string>
 #include <stdlib.h>
 #include <cstdlib>
+#include <ctime>
+
 #include "canonball.h"
 #include "utilities.h"
 
