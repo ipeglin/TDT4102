@@ -24,3 +24,7 @@ double get_distance_traveled(double velX, double velY);
 double target_practice(double distance_to_target, double velX, double velY);
 
 std::vector<double> get_velocity_vector(double theta, double abs_velocity);
+
+bool is_correct_distance_to_target(double distance_to_target, double velX, double velY);
+
+void play_target_practice();

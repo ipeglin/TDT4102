@@ -1,10 +1,10 @@
 #define _USE_MATH_DEFINES
-
-#include <canonball.h>
 #include <iostream>
 #include <cmath>
 #include <stdlib.h>
-// #include <vector>
+
+#include "canonball.h"
+#include "utilities.h"
 
 using namespace std;
 
@@ -25,13 +25,11 @@ double posY(double init_position, double init_velocity, double time) {
 }
 
 void print_time(double time) {
-    int hours{time / 3600};
+    int hours{int(time / 3600)};
     time = int(time) % (hours * 60);
     /*
         Redo this
     */
-
-    int hours{8};
 }
 
 double flight_time(double init_velocityY) {
@@ -66,8 +64,9 @@ double get_velY(double theta, double abs_velocity) {
     return (abs_velocity * sin(theta));
 }
 
-std::vector<double> get_velocity_vector(double theta, double abs_velocity) {
+vector<double> get_velocity_vector(double theta, double abs_velocity) {
     vector<double> vec{get_velX(theta, abs_velocity), get_velY(theta, abs_velocity)};
+    return vec;
 }
 
 double get_distance_traveled(double velX, double velY) {
@@ -76,5 +75,50 @@ double get_distance_traveled(double velX, double velY) {
 }
 
 double target_practice(double distance_to_target, double velX, double velY) {
-    return (abs(distance_to_target - get_distance_traveled(velX, velY)));
+    return (distance_to_target - get_distance_traveled(velX, velY));
+}
+
+bool is_correct_distance_to_target(double distance_to_target, double velX, double velY) {
+    double error = target_practice(distance_to_target,velX,velY);
+    return (error == 0) ?  true : false;
+}
+
+void play_target_practice() {
+    int target_position{random_with_limits(100, 1000)};
+    int failed_attempts{0};
+    double angle_input, velocity_input;
+
+    while (failed_attempts < 10) {
+        cout << "\n\nVinkel for skuddet (grader): ";
+        cin >> angle_input;
+
+        cout << endl
+             << "Startfart for skuddet (m/s): ";
+        cin >> velocity_input;
+
+        vector<double> velocity_vec{get_velocity_vector(angle_input, velocity_input)};
+        double hit_difference{target_practice(target_position, velocity_vec[0], velocity_vec[1])};
+        double flight_duration{flight_time(velocity_vec[1])};
+
+        cout << "Elements in velocity array:" << endl;
+        for (int i = 0; i < velocity_vec.size(); i++) {
+            cout << velocity_vec[i] << ", ";
+        }
+
+            cout << "----------------------------" << endl
+                 << "  Distance to target: " << target_position << "m" << endl
+                 << "  The shot was " << abs(hit_difference) << "m too " << ((hit_difference > 0) ? "short" : "far") << endl
+                 << "  The canonball took " << flight_duration << "s to hit." << endl
+                 << "-------------------------" << endl;
+
+        if (hit_difference < 5) {
+            cout << "HIT!!!" << endl;
+            break;
+        } else {
+            cout << "MISS..." << endl;
+            failed_attempts++;
+        }
+    }
+
+    cout << "WOW! Dette var du ikke god på. Værre treffsikkerhet har jeg aldri sett. Absolutt håpløs." << endl;
 }
