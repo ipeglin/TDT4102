@@ -65,10 +65,6 @@ bool Blackjack::ask_draw_card() {
     return (answer == 'y') ? true : false;
 }
 
-int Blackjack::get_deck_size() {
-    return (deck.get_length());
-}
-
 void Blackjack::draw_player_card() {
     player_hand.push_back(deck.draw_card());
     player_hand_value = get_hand_value(player_hand);
