@@ -42,7 +42,7 @@ Card Card_deck::draw_card() {
     return top_card;
 }
 
-int Card_deck::get_length() {
+int Card_deck::get_deck_size() {
     return int(cards.size());
 }
 

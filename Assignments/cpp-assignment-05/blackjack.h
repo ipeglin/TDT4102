@@ -19,6 +19,7 @@ class Blackjack {
          */
         Blackjack();
         
+
         /**
          * @brief Get the value of a card
          * 
@@ -26,6 +27,7 @@ class Blackjack {
          * @return int 
          */
         int get_card_value(Card &card);
+
 
         /**
          * @brief Get the total value of a hand
@@ -45,6 +47,7 @@ class Blackjack {
          */
         bool is_ace(Card &card);
 
+
         /**
          * @brief Check if the user wants to draw a card
          * 
@@ -52,7 +55,7 @@ class Blackjack {
          * @return false 
          */
         bool ask_draw_card();
-        
+
 
         /**
          * @brief Show th players hand
@@ -60,17 +63,20 @@ class Blackjack {
          */
         void show_player_hand();
 
+
         /**
          * @brief Draw card from the deck, and give to the player
          * 
          */
         void draw_player_card();
 
+
         /**
          * @brief Draw card from the deck, and give to the dealer
          * 
          */
         void draw_dealer_card();
+
 
         /**
          * @brief Run the game Blackjack
