@@ -1,10 +1,14 @@
 #include "temp.h"
 
-std::istream& operator>>(std::istream &input, Temps &t) {
-    std::string temp_string;
-    input >> temp_string;
+std::istream& operator>>(std::istream& is, Temps& t) {
+    std::string input_string;
+    is >> input_string;
+    std::cout << "MAX '" << input_string.substr(0, input_string.find("\t")) << "' MIN '" << input_string.substr(input_string.find("\t") + 1) << "'" << std::endl;
 
-    // Theres an error here.
-    // t.max = std::stod(temp_string.substr(0, temp_string.find(",")));
-    // t.min = std::stod(temp_string.substr(temp_string.find(",") + 1));
+    return is;
+
+    // This is where it all goes wrong. How does >> overloading work?
+    // t.max = std::stod(input_string.substr(0, input_string.find("\t")));
+    // t.min = std::stod(input_string.substr(input_string.find("\t") + 1));
+
 }
