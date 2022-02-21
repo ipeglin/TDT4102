@@ -1,7 +1,6 @@
 #pragma once
 #include "utilities.h"
 
-
 class Course_catalog {
     private:
         std::map<std::string, std::string> catalog;
