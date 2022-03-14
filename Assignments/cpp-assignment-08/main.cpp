@@ -12,12 +12,11 @@ int main() {
     // std::cout << matrix_1;
 	// std::cout << std::endl;
 
-    Matrix A(2, 2);
+    Matrix A(2, 3);
     A.set(0, 0, 1);
     A.set(0, 1, 2);
     A.set(1, 0, 3);
     A.set(1, 1, 4);
-
 
     Matrix B(2, 2);
     B.set(0, 0, 4);
@@ -31,9 +30,10 @@ int main() {
     C.set(1, 0, 1.5);
     C.set(1, 1, 2.0);
 
-    A += B + C;
-    std::cout << A << std::endl;
-	std::cout << std::endl;
+    // B *= A;
+    Matrix D{B * A};
+    std::cout << D << std::endl;
+    std::cout << E << std::endl;
 
     // Matrix matrix_4{matrix_1}; // Test the overloaded = operator
     // std::cout << matrix_4 << std::endl;

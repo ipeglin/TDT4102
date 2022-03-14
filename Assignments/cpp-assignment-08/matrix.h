@@ -90,6 +90,10 @@ class Matrix {
          */
         Matrix operator-(Matrix other_matrix);
 
+        Matrix operator*=(Matrix other_matrix);
+
+        Matrix operator*(Matrix other_matrix);
+
         /**
          * @brief Print matrix to console
          * 
@@ -131,4 +135,11 @@ class Matrix {
          * @return int 
          */
         int get_columns() const;
+
+        /**
+         * @brief Create a transpose of the original matrix
+         * 
+         * @return Matrix 
+         */
+        Matrix transpose();
 };

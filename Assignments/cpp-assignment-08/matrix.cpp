@@ -99,6 +99,21 @@ Matrix Matrix::operator-(Matrix other_matrix) {
     return difference;
 }
 
+Matrix Matrix::operator*=(Matrix other_matrix) {
+    assert(matrix_rows == other_matrix.matrix_rows && matrix_columns == other_matrix.matrix_columns);
+    Matrix temp_matrix(matrix_rows, matrix_columns);
+
+    for (int row_number = 0; row_number < other_matrix.matrix_rows; row_number++) {
+        for (int col_number = 0; col_number < other_matrix.matrix_columns; col_number++) {
+            for (int k = 0; k < matrix_columns; k++) {
+                temp_matrix.matrix[row_number][col_number] += matrix[row_number][k] * other_matrix.matrix[k][col_number];
+            }
+        }
+    }
+
+    return *this = temp_matrix;
+}
+
 std::ostream& operator<<(std::ostream& os, Matrix& matrix) {
     for (int row_number = 0; row_number < matrix.matrix_rows; row_number++) {
         for (int col_number = 0; col_number < matrix.matrix_columns; col_number++) {
@@ -116,4 +131,16 @@ int Matrix::get_rows() const {
 
 int Matrix::get_columns() const {
     return matrix_columns;
+}
+
+Matrix Matrix::transpose() {
+    Matrix transposed_matrix(matrix_columns, matrix_rows);
+
+    for (int row_number = 0; row_number < matrix_rows; row_number++) {
+        for (int col_number = 0; col_number < matrix_columns; col_number++) {
+            transposed_matrix[col_number][row_number] = matrix[row_number][col_number];
+        }
+    }
+
+    return transposed_matrix;
 }
