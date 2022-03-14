@@ -52,6 +52,7 @@ class Matrix {
          */
         friend std::ostream& operator<<(std::ostream& os, Matrix& matrix);
 
+
         /**
          * @brief Get value at matrix position
          * 
