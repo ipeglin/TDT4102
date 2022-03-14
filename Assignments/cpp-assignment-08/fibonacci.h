@@ -10,14 +10,6 @@
 void fill_in_fibonacci_numbers(int* results, int length);
 
 /**
- * @brief Get the fibonacci number by index
- * 
- * @param index Index of the fibonacci number
- * @return int 
- */
-int get_fibonacci_number_by_index(int index);
-
-/**
  * @brief Print content of array
  * 
  * @param array Array to be displayed
