@@ -5,12 +5,12 @@
 
 int main() {
     // 1)
-    // create_fibonacci();
+    create_fibonacci();
 
     // 2)
     Matrix matrix_1(2, 3);
-    // std::cout << matrix_1;
-	// std::cout << std::endl;
+    std::cout << matrix_1;
+	std::cout << std::endl;
 
     Matrix A(2, 3);
     A.set(0, 0, 1);
@@ -44,15 +44,15 @@ int main() {
     std::cout << D << std::endl;
     std::cout << E << std::endl;
 
-    // Matrix matrix_4{matrix_1}; // Test the overloaded = operator
-    // std::cout << matrix_4 << std::endl;
+    Matrix matrix_4{matrix_1}; // Test the overloaded = operator
+    std::cout << matrix_4 << std::endl;
 
-    // Matrix identity_matrix(4); // Testing the explicit constructor
-	// std::cout << identity_matrix << std::endl;
+    Matrix identity_matrix(4); // Testing the explicit constructor
+	std::cout << identity_matrix << std::endl;
 
-    // Matrix matrix_5(identity_matrix); // Testing deep copy constructor
-    // std::cout << matrix_5 << std::endl;
+    Matrix matrix_5(identity_matrix); // Testing deep copy constructor
+    std::cout << matrix_5 << std::endl;
 
     // 3)
-    // dummy_test();
+    dummy_test();
 }
