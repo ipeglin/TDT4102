@@ -18,6 +18,14 @@ int main() {
     A.set(1, 0, 3);
     A.set(1, 1, 4);
 
+    Matrix A_2(3, 2);
+    A_2.set(0, 0, 1);
+    A_2.set(0, 1, 2);
+    A_2.set(1, 0, 3);
+    A_2.set(1, 1, 4);
+    A_2.set(2, 0, 0);
+    A_2.set(2, 1, 0);
+
     Matrix B(2, 2);
     B.set(0, 0, 4);
     B.set(0, 1, 3);
@@ -32,6 +40,7 @@ int main() {
 
     // B *= A;
     Matrix D{B * A};
+    Matrix E{B * A_2};
     std::cout << D << std::endl;
     std::cout << E << std::endl;
 

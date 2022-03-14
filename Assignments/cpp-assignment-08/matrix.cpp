@@ -100,10 +100,10 @@ Matrix Matrix::operator-(Matrix other_matrix) {
 }
 
 Matrix Matrix::operator*=(Matrix other_matrix) {
-    assert(matrix_rows == other_matrix.matrix_rows && matrix_columns == other_matrix.matrix_columns);
+    assert(matrix_rows == other_matrix.get_rows() && matrix_columns == other_matrix.matrix_columns);
     Matrix temp_matrix(matrix_rows, matrix_columns);
 
-    for (int row_number = 0; row_number < other_matrix.matrix_rows; row_number++) {
+    for (int row_number = 0; row_number < other_matrix.get_rows(); row_number++) {
         for (int col_number = 0; col_number < other_matrix.matrix_columns; col_number++) {
             for (int k = 0; k < matrix_columns; k++) {
                 temp_matrix.matrix[row_number][col_number] += matrix[row_number][k] * other_matrix.matrix[k][col_number];
@@ -113,6 +113,27 @@ Matrix Matrix::operator*=(Matrix other_matrix) {
 
     return *this = temp_matrix;
 }
+
+// This doesn't work yet
+/*
+Matrix Matrix::operator*(Matrix other_matrix) {
+    assert((matrix_rows == other_matrix.get_rows() && matrix_columns == other_matrix.matrix_columns) || (matrix_columns == other_matrix.get_rows()) || (matrix_columns == other_matrix.matrix_columns));
+    Matrix product{*this};
+
+    if (product.matrix_rows == other_matrix.get_rows() && product.matrix_columns == other_matrix.matrix_columns) {
+        product *= other_matrix;
+    } else if (product.matrix_columns == other_matrix.get_rows()){
+        std::cout << "There are compatible for multiplication. (M x N) * (N x M)" << std::endl;
+        Matrix temp_matrix{other_matrix};
+    } else if (product.matrix_columns == other_matrix.matrix_columns) {
+        std::cout << "Prohibited operation. Multiplying with the transposed of matrix underneath instead:" << std::endl;
+        Matrix temp_matrix{other_matrix.transpose()};
+        std::cout << temp_matrix << std::endl;
+    }
+
+    return product;
+}
+*/
 
 std::ostream& operator<<(std::ostream& os, Matrix& matrix) {
     for (int row_number = 0; row_number < matrix.matrix_rows; row_number++) {

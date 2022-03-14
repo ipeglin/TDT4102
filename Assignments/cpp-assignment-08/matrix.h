@@ -67,7 +67,7 @@ class Matrix {
         Matrix operator+=(Matrix other_matrix);
 
         /**
-         * @brief Create new Matrix instance of the sum of two matrices.
+         * @brief Create new Matrix instance of the sum of two matrices
          * 
          * @param other_matrix Instance of Matrix class
          * @return Matrix 
@@ -83,15 +83,27 @@ class Matrix {
         Matrix operator-=(Matrix other_matrix);
 
         /**
-         * @brief Create new Matrix instance of the difference of two matrices.
+         * @brief Create new Matrix instance of the difference of two matrices
          * 
          * @param other_matrix Instance of Matrix class
          * @return Matrix 
          */
         Matrix operator-(Matrix other_matrix);
 
+        /**
+         * @brief Multiply a matrix with another
+         * 
+         * @param other_matrix Instance of Matrix class
+         * @return Matrix 
+         */
         Matrix operator*=(Matrix other_matrix);
 
+        /**
+         * @brief Create new Matrix of the product of two matrices
+         * 
+         * @param other_matrix Instance of Matrix class
+         * @return Matrix 
+         */
         Matrix operator*(Matrix other_matrix);
 
         /**
