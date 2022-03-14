@@ -58,6 +58,14 @@ class Matrix {
          */
         Matrix operator=(Matrix ref_matrix);
 
+        Matrix operator+=(Matrix other_matrix);
+
+        Matrix operator+(Matrix other_matrix);
+        
+        Matrix operator-=(Matrix other_matrix);
+
+        Matrix operator-(Matrix other_matrix);
+
         /**
          * @brief Print matrix to console
          * 

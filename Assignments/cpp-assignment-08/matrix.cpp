@@ -60,14 +60,49 @@ double *Matrix::operator[](int index) {
 Matrix Matrix::operator=(Matrix ref_matrix) {
     std::swap(matrix_rows, ref_matrix.matrix_rows);
     std::swap(matrix_columns, ref_matrix.matrix_columns);
+    std::swap(matrix, ref_matrix.matrix);
 
     return *this;
+}
+
+Matrix Matrix::operator+=(Matrix other_matrix) {
+    for (int row_number = 0; row_number < matrix_rows; row_number++) {
+        for (int col_number = 0; col_number < matrix_columns; col_number++) {
+            matrix[row_number][col_number] += other_matrix.matrix[row_number][col_number];
+        }
+    }
+
+    return *this;
+}
+
+Matrix Matrix::operator+(Matrix other_matrix) {
+    Matrix sum{other_matrix};
+    sum += *this;
+
+    return sum;
+}
+
+Matrix Matrix::operator-=(Matrix other_matrix) {
+    for (int row_number = 0; row_number < matrix_rows; row_number++) {
+        for (int col_number = 0; col_number < matrix_columns; col_number++) {
+            matrix[row_number][col_number] -= other_matrix.matrix[row_number][col_number];
+        }
+    }
+
+    return *this;
+}
+
+Matrix Matrix::operator-(Matrix other_matrix) {
+    Matrix difference{*this};
+    difference -= other_matrix;
+
+    return difference;
 }
 
 std::ostream& operator<<(std::ostream& os, Matrix& matrix) {
     for (int row_number = 0; row_number < matrix.matrix_rows; row_number++) {
         for (int col_number = 0; col_number < matrix.matrix_columns; col_number++) {
-            os << std::setw(3) << matrix[row_number][col_number] << " ";
+            os << std::setw(4) << matrix[row_number][col_number] << " ";
         }
         os << std::endl;
     }
