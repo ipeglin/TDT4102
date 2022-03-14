@@ -58,12 +58,36 @@ class Matrix {
          */
         Matrix operator=(Matrix ref_matrix);
 
+        /**
+         * @brief Add another matrix to the current instance
+         * 
+         * @param other_matrix Instance of Matrix class
+         * @return Matrix 
+         */
         Matrix operator+=(Matrix other_matrix);
 
+        /**
+         * @brief Create new Matrix instance of the sum of two matrices.
+         * 
+         * @param other_matrix Instance of Matrix class
+         * @return Matrix 
+         */
         Matrix operator+(Matrix other_matrix);
         
+        /**
+         * @brief Subtract another matrix from the current instance
+         * 
+         * @param other_matrix Insatnce of Matrix class
+         * @return Matrix 
+         */
         Matrix operator-=(Matrix other_matrix);
 
+        /**
+         * @brief Create new Matrix instance of the difference of two matrices.
+         * 
+         * @param other_matrix Instance of Matrix class
+         * @return Matrix 
+         */
         Matrix operator-(Matrix other_matrix);
 
         /**
