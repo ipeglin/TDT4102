@@ -19,10 +19,15 @@ void print_array(int* array, int array_length) {
 }
 
 void create_fibonacci() {
+    int sequence_length;
+
     std::cout << "How many numbers do you want in the sequence: ";
     std::cin >> sequence_length;
+
     int *fibonacci_numbers{new int[sequence_length]};
+
     fill_in_fibonacci_numbers(fibonacci_numbers, sequence_length);
     print_array(fibonacci_numbers, sequence_length);
+    
     delete[] fibonacci_numbers;
 }
