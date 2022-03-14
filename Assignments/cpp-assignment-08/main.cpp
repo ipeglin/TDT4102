@@ -1,15 +1,20 @@
 #include "utilities.h"
 #include "fibonacci.h"
 #include "matrix.h"
+#include "intermezzo.h"
 
 int main() {
     // 1)
     create_fibonacci();
 
     // 2)
-    Matrix m(5,3);
-	std::cout << m;
+    Matrix matrix_1(3,2);
+	std::cout << matrix_1;
 	std::cout << std::endl;
-	Matrix n(5);
-	std::cout << n;
+
+	Matrix identity_matrix(4);
+	std::cout << identity_matrix;
+
+    // 3)
+    dummy_test();
 }
