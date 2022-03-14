@@ -29,6 +29,13 @@ class Matrix {
         explicit Matrix(int height);
 
         /**
+         * @brief Construct a deep copy of another Matrix
+         * 
+         * @param ref_matrix Instance of Matrix class
+         */
+        Matrix(const Matrix &ref_matrix);
+
+        /**
          * @brief Destroy the Matrix object
          * 
          */
@@ -42,7 +49,15 @@ class Matrix {
          * @return double* 
          */
         double *operator[](int index);
-        
+
+        /**
+         * @brief Create a copy of another Matrix by reference
+         * 
+         * @param ref_matrix Instance of matrix class
+         * @return Matrix 
+         */
+        Matrix operator=(Matrix ref_matrix);
+
         /**
          * @brief Print matrix to console
          * 
@@ -76,12 +91,12 @@ class Matrix {
          * 
          * @return int 
          */
-        int get_rows();
+        int get_rows() const;
 
         /**
          * @brief Get number of columns in matrix
          * 
          * @return int 
          */
-        int get_columns();
+        int get_columns() const;
 };

@@ -19,11 +19,26 @@ Matrix::Matrix(int width) : Matrix(width, width) {
     }
 }
 
+Matrix::Matrix(const Matrix &ref_matrix) {
+    this->matrix_rows = ref_matrix.get_rows();
+    this->matrix_columns = ref_matrix.get_columns();
+    this->matrix = new double *[this->matrix_rows];
+
+    for (int row_number = 0; row_number < this->matrix_rows; row_number++) {
+        matrix[row_number] = new double[this->matrix_columns];
+
+        for (int col_number = 0; col_number < this->matrix_columns; col_number++) {
+            this->matrix[row_number][col_number] = ref_matrix.matrix[row_number][col_number];
+        }
+    }
+}
+
 Matrix::~Matrix() {
     for (int row_number = 0; row_number < matrix_rows; row_number++) {
         delete[] matrix[row_number];
         matrix[row_number] = nullptr;
     }
+    
     delete[] matrix;
     matrix = nullptr;
 }
@@ -42,6 +57,13 @@ double *Matrix::operator[](int index) {
     return matrix[index];
 }
 
+Matrix Matrix::operator=(Matrix ref_matrix) {
+    std::swap(matrix_rows, ref_matrix.matrix_rows);
+    std::swap(matrix_columns, ref_matrix.matrix_columns);
+
+    return *this;
+}
+
 std::ostream& operator<<(std::ostream& os, Matrix& matrix) {
     for (int row_number = 0; row_number < matrix.matrix_rows; row_number++) {
         for (int col_number = 0; col_number < matrix.matrix_columns; col_number++) {
@@ -49,13 +71,14 @@ std::ostream& operator<<(std::ostream& os, Matrix& matrix) {
         }
         os << std::endl;
     }
+
     return os;
 }
 
-int Matrix::get_rows() {
+int Matrix::get_rows() const {
     return matrix_rows;
 }
 
-int Matrix::get_columns() {
+int Matrix::get_columns() const {
     return matrix_columns;
 }
