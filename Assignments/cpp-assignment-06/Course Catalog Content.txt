@@ -1,0 +1,4 @@
+TDT4102,Prosedyre- og objektorientert programmering
+TMA4106,Matematikk 2
+TMA4245,Statistikk
+TTT4260,Elektronisk systemdesign- og analyse

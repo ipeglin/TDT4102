@@ -93,8 +93,8 @@ void Blackjack::play_game() {
     } while (player_hand_value < 21 && still_playing);
 
     if ((player_hand_value == 21 && player_hand_value != dealer_hand_value) || (player_hand_value < 21 && player_hand_value > dealer_hand_value) || (player_hand_value < 21 && dealer_hand_value > 21)) {
-        std::cout << "Gratulerer! Du vant!" << std::endl << "Player: " << player_hand_value << std::endl << "Dealer: " << dealer_hand_value << std::endl; 
+        std::cout << "Congratulations! You won!" << std::endl << "Player: " << player_hand_value << std::endl << "Dealer: " << dealer_hand_value << std::endl; 
     } else {
-        std::cout << "Du tapte dessverre" << std::endl << "Player: " << player_hand_value << std::endl << "Dealer: " << dealer_hand_value << std::endl;
+        std::cout << "You lose!" << std::endl << "Player: " << player_hand_value << std::endl << "Dealer: " << dealer_hand_value << std::endl;
     }
 }
