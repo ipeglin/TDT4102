@@ -17,26 +17,14 @@ Practiced with the use of module functions to create the game Mastermind.
 ## [CPP5](https://github.com/ipeglin/TDT4102/tree/master/Assignments/cpp-assignment-05)
 Created the game Blackjack with the use of classes.
 
-## [CPP6](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-Chosen modules:
-* [Module 1](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 2](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 3](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 4](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
+## [CPP6](https://github.com/ipeglin/TDT4102/tree/master/Assignments/cpp-assignment-06)
+Gaining experience with cource databases and file manipulation.
 
-## [CPP7](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-Chosen modules:
-* [Module 1](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 2](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 3](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 4](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
+## [CPP7](https://github.com/ipeglin/TDT4102/tree/master/Assignments/cpp-assignment-07)
+Drawing some random emojis.
 
-## [CPP8](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-Chosen modules:
-* [Module 1](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 2](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 3](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 4](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
+## [CPP8](https://github.com/ipeglin/TDT4102/tree/master/Assignments/cpp-assignment-08)
+Matrix operations.
 
 ## [CPP9](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
 Chosen modules:
