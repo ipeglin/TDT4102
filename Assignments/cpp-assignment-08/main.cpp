@@ -4,13 +4,14 @@
 #include "intermezzo.h"
 
 int main() {
+    
     // 1)
     create_fibonacci();
 
     // 2)
     Matrix matrix_1(2, 3);
-    std::cout << matrix_1;
-	std::cout << std::endl;
+    std::cout << "Matrix 1:" << std::endl
+              << matrix_1 << std::endl;
 
     Matrix A(2, 3);
     A.set(0, 0, 1);
@@ -38,20 +39,29 @@ int main() {
     C.set(1, 0, 1.5);
     C.set(1, 1, 2.0);
 
-    // B *= A;
-    Matrix D{B * A};
-    Matrix E{B * A_2};
-    std::cout << D << std::endl;
-    std::cout << E << std::endl;
+    Matrix D{B * A_2};
 
-    Matrix matrix_4{matrix_1}; // Test the overloaded = operator
-    std::cout << matrix_4 << std::endl;
+    std::cout << "Matrix B:" << std::endl
+              << B << std::endl;
+
+    std::cout << "Matrix A_2:" << std::endl
+              << A_2 << std::endl;
+
+    std::cout << "Matrix D (B * A_2):" << std::endl
+              << D << std::endl;
+
+    B *= C;    
+    std::cout << "NEW Matrix B (B *= C):" << std::endl
+              << B << std::endl;
+
+    Matrix matrix_2{matrix_1}; // Test the overloaded = operator
+    std::cout << "Matrix 2:" << std::endl<< matrix_2 << std::endl;
 
     Matrix identity_matrix(4); // Testing the explicit constructor
-	std::cout << identity_matrix << std::endl;
+	std::cout << "Indentity Matrix:" << std::endl<< identity_matrix << std::endl;
 
-    Matrix matrix_5(identity_matrix); // Testing deep copy constructor
-    std::cout << matrix_5 << std::endl;
+    Matrix matrix_3(identity_matrix); // Testing deep copy constructor
+    std::cout << "Matrix 3:" << std::endl<< matrix_3 << std::endl;
 
     // 3)
     dummy_test();
