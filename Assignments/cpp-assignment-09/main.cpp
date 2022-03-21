@@ -1,6 +1,7 @@
 #include "utilities.h"
 #include "person.h"
 #include "car.h"
+#include "meeting.h"
 
 int main() {
     Person person_1("Ola Normann", "ola@normann.no");
@@ -10,4 +11,7 @@ int main() {
 
     std::cout << person_1 << std::endl;
     std::cout << person_2 << std::endl;
+
+    Campus campus{Campus::Trondheim};
+    std::cout << campus << std::endl;
 }
