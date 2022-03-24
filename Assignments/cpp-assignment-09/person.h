@@ -9,8 +9,9 @@ class Person {
         std::unique_ptr<Car> car;
 
     public:
-        Person(std::string name, std::string email, Car* car = nullptr);
-        
+        Person(std::string name, std::string email, std::unique_ptr<Car> car = nullptr);
+        virtual ~Person();
+
         friend std::ostream& operator<<(std::ostream& os, const Person& person);
 
         std::string get_name() const;

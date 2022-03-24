@@ -27,7 +27,15 @@ Meeting::Meeting(int day, int start, int end, Campus meeting_location, std::stri
     subject{meeting_subject}, 
     leader{meeting_leader} {
         this->add_participant(meeting_leader);
+        meetings.emplace(this);
     }
+
+
+Meeting::~Meeting() {
+    std::cout << "The folling meeting was deleted from heap" << std::endl
+              << *this << std::endl;
+    meetings.erase(this);
+}
 
 std::ostream& operator<<(std::ostream& os, const Meeting& meeting) {
     os << "Starting: " << meeting.get_start_time() << std::endl

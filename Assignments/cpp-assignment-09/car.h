@@ -6,6 +6,7 @@ class Car {
 
     public:
         Car(int number_of_seats);
+        virtual ~Car();
 
         bool has_free_seats() const;
         void reserve_seat();

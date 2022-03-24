@@ -20,8 +20,11 @@ class Meeting {
         const std::shared_ptr<Person> leader;
         std::vector<std::shared_ptr<Person>> participants{};
 
+        static set<const Meeting *> meetings;
+
     public:
         Meeting(int day, int start, int end, Campus meeting_location, std::string meeting_subject, std::shared_ptr<Person> meeting_leader);
+        ~Meeting();
 
         int get_day() const;
         int get_start_time() const;

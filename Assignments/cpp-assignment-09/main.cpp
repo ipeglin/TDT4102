@@ -5,14 +5,14 @@
 
 int main() {
     // Oppgave 1
-    Car car_1{5};
-    Car car_2{0};
-    Car car_3{4};
+    std::unique_ptr<Car> car_1 = std::make_unique<Car>(5);
+    std::unique_ptr<Car> car_2 = std::make_unique<Car>(0);
+    std::unique_ptr<Car> car_3 = std::make_unique<Car>(4);
 
     std::shared_ptr<Person> person_1 = std::make_shared<Person>("Ola Normann", "ola@normann.no");
-    std::shared_ptr<Person> person_2 = std::make_shared<Person>("Kari Normann", "kari@normann.no", &car_1);
-    std::shared_ptr<Person> person_3 = std::make_shared<Person>("Leif Eriksson", "leif.eriksson@viking.no", &car_3);
-    std::shared_ptr<Person> person_4 = std::make_shared<Person>("Olav Haraldsson", "olavtheholy@viking.no", &car_2);
+    std::shared_ptr<Person> person_2 = std::make_shared<Person>("Kari Normann", "kari@normann.no", car_1);
+    std::shared_ptr<Person> person_3 = std::make_shared<Person>("Leif Eriksson", "leif.eriksson@viking.no", car_3);
+    std::shared_ptr<Person> person_4 = std::make_shared<Person>("Olav Haraldsson", "olavtheholy@viking.no", car_2);
     
 
     std::cout << person_1 << std::endl;
@@ -37,7 +37,7 @@ int main() {
 
 
     std::vector<std::shared_ptr<Person>> co_drivers{meeting_1.find_potential_co_driving(meeting_2)};
-    for (std::shared_ptr<Person> &person : co_drivers) {
-        std::cout << "Potential co-driver: " << person.get()->get_name() << std::endl;
-    }
+    // for (std::shared_ptr<Person> &person : co_drivers) {
+    //     std::cout << "Potential co-driver: " << person.get()->get_name() << std::endl;
+    // }
 }
