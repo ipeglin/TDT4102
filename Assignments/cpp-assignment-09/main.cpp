@@ -5,14 +5,20 @@
 
 int main() {
     // Oppgave 1
-    Person person_1("Ola Normann", "ola@normann.no");
+    Car car_1{5};
+    Car car_2{0};
+    Car car_3{4};
+
+    std::shared_ptr<Person> person_1 = std::make_shared<Person>("Ola Normann", "ola@normann.no");
+    std::shared_ptr<Person> person_2 = std::make_shared<Person>("Kari Normann", "kari@normann.no", &car_1);
+    std::shared_ptr<Person> person_3 = std::make_shared<Person>("Leif Eriksson", "leif.eriksson@viking.no", &car_3);
+    std::shared_ptr<Person> person_4 = std::make_shared<Person>("Olav Haraldsson", "olavtheholy@viking.no", &car_2);
     
-    Car car_1(4);
-    Person person_2("Kari Normann", "kari@normann.no", &car_1);
 
     std::cout << person_1 << std::endl;
     std::cout << person_2 << std::endl;
-
+    std::cout << person_3 << std::endl;
+    std::cout << person_4 << std::endl;
 
     // Oppgave 2
     Campus campus{Campus::Trondheim};
@@ -20,8 +26,18 @@ int main() {
 
 
     // Oppgave 3
-    std::shared_ptr<Person> meeting_leader = std::make_shared<Person>("Ian Philip Eglin", "philip@eglin.no");
+    Meeting meeting_1(11, 1200, 1400, Campus::Trondheim, "How to pass TDT4102 without a cookbook 101", person_1);
+    Meeting meeting_2(11, 1300, 1500, Campus::Trondheim, "How to fail statistics TMA4245", person_4);
 
-    Meeting meeting(1, 12, 14, Campus::Trondheim, "How to pass TDT4102 without a cookbook 101", meeting_leader);
-    std::cout << meeting << std::endl;
+    std::cout << meeting_1 << std::endl;
+    std::cout << meeting_2 << std::endl;
+
+    meeting_1.add_participant(person_3);
+    meeting_2.add_participant(person_4);
+
+
+    std::vector<std::shared_ptr<Person>> co_drivers{meeting_1.find_potential_co_driving(meeting_2)};
+    for (std::shared_ptr<Person> &person : co_drivers) {
+        std::cout << "Potential co-driver: " << person.get()->get_name() << std::endl;
+    }
 }
