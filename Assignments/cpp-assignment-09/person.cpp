@@ -1,5 +1,10 @@
 #include "Person.h"
 
+Person::Person(std::string name, std::string email, std::unique_ptr<Car> car_ptr)
+    : name{name}, email{email}, car{std::move(car_ptr)} {}
+
+
+
 std::ostream &operator<<(std::ostream &os, const Person &person) {
     os << "Name: " << person.get_name() << std::endl
        << "Email: " << person.get_email() << std::endl

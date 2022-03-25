@@ -9,8 +9,7 @@ class Person {
         std::unique_ptr<Car> car;
 
     public:
-        Car(std::string name, std::string email, std::unique_ptr<Car> car_ptr = nullptr)
-            : name{name}, email{email}, car{car_ptr} {}
+        Person(std::string name, std::string email, std::unique_ptr<Car> car_ptr = nullptr);
 
         friend std::ostream &operator<<(std::ostream &os, const Person &person);
 
@@ -19,4 +18,4 @@ class Person {
         bool has_available_seats() const;
 
         void set_email(std::string new_email);
-}
+};
