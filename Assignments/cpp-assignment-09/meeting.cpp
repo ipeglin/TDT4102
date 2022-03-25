@@ -1,5 +1,4 @@
 #include "Meeting.h"
-#include "utilities.h"
 
 std::ostream& operator<<(std::ostream &os, const Campus &campus) {
     switch(campus) {
