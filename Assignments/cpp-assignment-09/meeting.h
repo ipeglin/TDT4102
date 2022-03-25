@@ -18,9 +18,12 @@ class Meeting {
         Campus location;
         std::string subject;
         const std::shared_ptr<Person> leader;
-        std::vector<std::shared_ptr<Person>> participants;
+        std::vector<std::shared_ptr<Person>> participants{};
 
     public:
+        Meeting(int day, int start_time, int end_time, Campus location, std::string subject, std::shared_ptr<Person> &leader);
+        ~Meeting();
+
         int get_day() const;
         int get_start_time() const;
         int get_end_time() const;

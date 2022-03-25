@@ -10,4 +10,6 @@ int main() {
 
     std::cout << *person_1 << std::endl;
     std::cout << *person_2 << std::endl;
+
+    Meeting meeting_1(2, 1300, 1400, Campus::Trondheim, "How to pass TDT4102 without the use of cookbooks 101", person_1);
 }

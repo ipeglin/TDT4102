@@ -21,6 +21,20 @@ std::ostream& operator<<(std::ostream &os, const Campus &campus) {
 
 
 
+Meeting::Meeting(int day, int start_time, int end_time, Campus location, std::string subject, std::shared_ptr<Person> &leader) 
+    : day{day},
+    start_time{start_time},
+    end_time{end_time},
+    location{location},
+    subject{subject},
+    leader{leader} {}
+
+Meeting::~Meeting() {
+    std::cout << "Instance deleted (Meeting): Subject -> " << subject << std::endl;
+}
+
+
+
 int Meeting::get_day() const {
     return day;
 }
