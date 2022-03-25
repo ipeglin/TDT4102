@@ -2,6 +2,7 @@
 #include "Person.h"
 #include "Car.h"
 #include "Meeting.h"
+#include "MeetingWindow.h"
 
 int main() {
     // Oppgave 2
@@ -19,4 +20,8 @@ int main() {
     std::cout << meeting_1 << std::endl;
 
     meeting_1.find_potenional_co_driving(meeting_2);
+
+    // Oppgave 4
+    MeetingWindow meeting_window{100, 100, 600, 400, "New Window"};    
+    Graph_lib::gui_main();
 }
