@@ -21,4 +21,10 @@ class Meeting {
         std::vector<std::shared_ptr<Person>> participants;
 
     public:
+        int get_day() const;
+        int get_start_time() const;
+        int get_end_time() const;
+        Campus get_location() const;
+        std::string get_subject() const;
+        std::shared_ptr<Person> get_leader() const;
 };
