@@ -27,7 +27,7 @@ Meeting::Meeting(int day, int start, int end, Campus meeting_location, std::stri
     subject{meeting_subject}, 
     leader{meeting_leader} {
         this->add_participant(meeting_leader);
-        meetings.emplace(this);
+        meetings.insert(this);
     }
 
 
@@ -81,15 +81,15 @@ std::vector<std::string> Meeting::get_participant_list() const {
     return meeting_participants;
 }
 
-void Meeting::add_participant(std::shared_ptr<Person> new_participant) {
+void Meeting::add_participant(std::shared_ptr<Person> const new_participant) {
     this->participants.emplace_back(new_participant.get());
 }
 
-std::vector<std::shared_ptr<Person>> Meeting::find_potential_co_driving(Meeting other_meeting) const {
+std::vector<std::shared_ptr<Person>>Meeting::find_potential_co_driving(Meeting other_meeting) const {
     std::vector<std::shared_ptr<Person>> temp_vector{};
 
     if (this->location == other_meeting.get_location() && this->day == other_meeting.get_day() && std::abs(this->start_time - other_meeting.get_start_time()) < 1 && std::abs(this->end_time - other_meeting.get_end_time()) < 1) {
-        for (std::shared_ptr<Person> &person : other_meeting.participants) {
+        for (std::shared_ptr<Person> const &person : other_meeting.participants) {
             if (person->has_available_seats()) {
                 temp_vector.push_back(person);
             }
