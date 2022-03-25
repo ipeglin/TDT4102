@@ -44,3 +44,9 @@ std::string Meeting::get_subject() const {
 std::shared_ptr<Person> Meeting::get_leader() const {
     return leader;
 }
+
+
+
+void Meeting::add_participant(std::shared_ptr<Person> const person) {
+    participants.push_back(person);
+}

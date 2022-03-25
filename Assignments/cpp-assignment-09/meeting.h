@@ -27,4 +27,6 @@ class Meeting {
         Campus get_location() const;
         std::string get_subject() const;
         std::shared_ptr<Person> get_leader() const;
+
+        void add_participant(std::shared_ptr<Person> const person);
 };
