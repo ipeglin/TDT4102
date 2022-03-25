@@ -21,6 +21,7 @@ int main() {
 
     meeting_1.find_potenional_co_driving(meeting_2);
 
+
     // Oppgave 4
     MeetingWindow meeting_window{100, 100, 600, 400, "New Window"};    
     Graph_lib::gui_main();

@@ -7,8 +7,6 @@
 class MeetingWindow : public AnimationWindow {
     private:
         static constexpr int padding_top{30};
-        static constexpr int button_width{300};
-        static constexpr int button_height{300};
         static constexpr int field_width{300};
         static constexpr int field_height{40};
         static constexpr int field_padding_left{50};
@@ -39,6 +37,5 @@ class MeetingWindow : public AnimationWindow {
         static void cb_new_person(Fl_Widget*, void* pw);
 
         void new_person();
-
         void show_people();
 };
