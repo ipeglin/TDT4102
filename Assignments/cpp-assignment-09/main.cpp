@@ -24,4 +24,6 @@ int main() {
     // Oppgave 4
     MeetingWindow meeting_window{100, 100, 600, 400, "New Window"};    
     Graph_lib::gui_main();
+
+    meeting_window.show_people();
 }
