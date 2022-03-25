@@ -79,8 +79,25 @@ void Meeting::add_participant(std::shared_ptr<Person> const person) {
 
 
 
+std::vector<std::shared_ptr<Person>> Meeting::find_potenional_co_driving(const Meeting &other_meeting) const {
+    std::vector<std::shared_ptr<Person>> potential_co_drivers{};
+
+    if (location == other_meeting.get_location() && day == other_meeting.get_day() && (std::abs(start_time - other_meeting.get_start_time()) <= 100) && (std::abs(end_time - other_meeting.get_end_time()) <= 100)) {
+        for (std::shared_ptr<Person> person_ptr : other_meeting.participants) {
+            if (person_ptr.get()->has_available_seats()) {
+                potential_co_drivers.push_back(person_ptr);
+            }
+        }
+    }
+
+    return potential_co_drivers;
+}
+
+
+
 std::ostream &operator<<(std::ostream &os, const Meeting &meeting) {
-    os << "Starting: " << meeting.get_start_time() << std::endl
+    os << "Day: " << meeting.get_day() << std::endl
+       << "Starting: " << meeting.get_start_time() << std::endl
        << "Ending: " << meeting.get_end_time() << std::endl
        << "Location: " << meeting.get_location() << std::endl
        << "Subject: " << meeting.get_subject() << std::endl

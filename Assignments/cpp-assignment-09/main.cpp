@@ -14,5 +14,9 @@ int main() {
 
     // Oppgave 3
     Meeting meeting_1(2, 1300, 1400, Campus::Trondheim, "How to pass TDT4102 without the use of cookbooks 101", person_1);
-    std::cout << meeting_1 << std::endl;
+    Meeting meeting_2(2, 1330, 1500, Campus::Trondheim, "How to fail statistics TMA4245", person_2);
+    
+    // std::cout << meeting_1 << std::endl;
+
+    meeting_1.find_potenional_co_driving(meeting_2);
 }

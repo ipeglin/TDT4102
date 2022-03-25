@@ -33,6 +33,8 @@ class Meeting {
         std::vector<std::string> get_participant_list() const;
 
         void add_participant(std::shared_ptr<Person> const person);
+
+        std::vector<std::shared_ptr<Person>> find_potenional_co_driving(const Meeting &other_meeting) const;
 };
 
 std::ostream &operator<<(std::ostream &os, const Meeting &meeting);
