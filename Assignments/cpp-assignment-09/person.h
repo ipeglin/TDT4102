@@ -10,6 +10,7 @@ class Person {
 
     public:
         Person(std::string name, std::string email, std::unique_ptr<Car> car_ptr = nullptr);
+        ~Person();
 
         friend std::ostream &operator<<(std::ostream &os, const Person &person);
 

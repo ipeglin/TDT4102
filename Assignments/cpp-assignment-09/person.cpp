@@ -3,6 +3,9 @@
 Person::Person(std::string name, std::string email, std::unique_ptr<Car> car_ptr)
     : name{name}, email{email}, car{std::move(car_ptr)} {}
 
+Person::~Person() {
+    std::cout << "Instance deleted (Person): " << name << std::endl;
+}
 
 
 std::ostream &operator<<(std::ostream &os, const Person &person) {
