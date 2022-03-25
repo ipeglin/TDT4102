@@ -27,7 +27,9 @@ Meeting::Meeting(int day, int start_time, int end_time, Campus location, std::st
     end_time{end_time},
     location{location},
     subject{subject},
-    leader{leader} {}
+    leader{leader} {
+        add_participant(leader);
+    }
 
 Meeting::~Meeting() {
     std::cout << "Instance deleted (Meeting): Subject -> " << subject << std::endl;
@@ -57,6 +59,16 @@ std::string Meeting::get_subject() const {
 
 std::shared_ptr<Person> Meeting::get_leader() const {
     return leader;
+}
+
+std::vector<std::string> Meeting::get_participant_list() const {
+    std::vector<std::string> name_vector{};
+    
+    for (std::shared_ptr<Person> person_ptr : participants) {
+        name_vector.pushback(person_ptr.get()->get_name());
+    }
+
+    return name_vector;
 }
 
 
