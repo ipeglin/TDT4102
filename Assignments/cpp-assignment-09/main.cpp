@@ -14,5 +14,5 @@ int main() {
 
     // Oppgave 3
     Meeting meeting_1(2, 1300, 1400, Campus::Trondheim, "How to pass TDT4102 without the use of cookbooks 101", person_1);
-    meeting_1.get_participant_list();
+    std::cout << meeting_1 << std::endl;
 }

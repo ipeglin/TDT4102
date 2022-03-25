@@ -63,9 +63,9 @@ std::shared_ptr<Person> Meeting::get_leader() const {
 
 std::vector<std::string> Meeting::get_participant_list() const {
     std::vector<std::string> name_vector{};
-    
+
     for (std::shared_ptr<Person> person_ptr : participants) {
-        name_vector.pushback(person_ptr.get()->get_name());
+        name_vector.push_back(person_ptr.get()->get_name());
     }
 
     return name_vector;
@@ -75,4 +75,16 @@ std::vector<std::string> Meeting::get_participant_list() const {
 
 void Meeting::add_participant(std::shared_ptr<Person> const person) {
     participants.push_back(person);
+}
+
+
+
+std::ostream &operator<<(std::ostream &os, const Meeting &meeting) {
+    os << "Starting: " << meeting.get_start_time() << std::endl
+       << "Ending: " << meeting.get_end_time() << std::endl
+       << "Location: " << meeting.get_location() << std::endl
+       << "Subject: " << meeting.get_subject() << std::endl
+       << "Meeting leader: " << meeting.get_leader().get()->get_name() << std::endl;
+
+    return os;
 }

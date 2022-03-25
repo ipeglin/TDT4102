@@ -34,3 +34,5 @@ class Meeting {
 
         void add_participant(std::shared_ptr<Person> const person);
 };
+
+std::ostream &operator<<(std::ostream &os, const Meeting &meeting);
