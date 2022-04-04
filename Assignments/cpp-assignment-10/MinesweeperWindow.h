@@ -16,6 +16,9 @@ class MinesweeperWindow : public AnimationWindow {
 		const int mines;		// Antall miner
 		vector<shared_ptr<Tile>> tiles; // Vektor som inneholder alle tiles
 
+		int number_opened_mines{0};
+
+		Fl_Output end_screen;
 
 		// hoyde og bredde i piksler
 		int Height() const { return height * cellSize; } 
@@ -35,6 +38,8 @@ class MinesweeperWindow : public AnimationWindow {
 		//aapne og flagge rute
 		void openTile(Point xy);
 		void flagTile(Point xy);
+
+		int count_mines(std::vector<Point> point_vector);
 
 		// callback funksjoner for de tile knappene
 		static void cb_click(Fl_Widget*, void* pw) { static_cast<MinesweeperWindow*>(pw)->click(); };

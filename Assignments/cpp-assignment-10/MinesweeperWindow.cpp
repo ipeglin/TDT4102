@@ -34,36 +34,37 @@ T get_random_element_and_remove(std::vector<T> &vector) {
 MinesweeperWindow::MinesweeperWindow(int x, int y, int width, int height, int mines, const string &title) : 
 	// Initialiser medlemsvariabler, bruker konstruktoren til AnimationWindow-klassen
 	AnimationWindow{x, y, width * cellSize, (height + 1) * cellSize, title},
-	width{width}, height{height}, mines{mines}
-{
-	std::map<int, vector<int>> mine_position_map{};
-	// Legg til alle tiles i vinduet
-	for (int i = 0; i < height; ++i) {
-		// std::vector<int> temp_vec{};
-		mine_position_map.insert(std::pair<int, std::vector<int>>(i, {}));
+	width{width}, height{height}, mines{mines}, 
+	end_screen{0, 0, width * cellSize, height * cellSize} {
+		std::map<int, vector<int>> mine_position_map{};
 
-		for (int j = 0; j < width; ++j) {
-			mine_position_map.at(i).push_back(j);
+		// Legg til alle tiles i vinduet
+		for (int i = 0; i < height; ++i) {
+			// std::vector<int> temp_vec{};
+			mine_position_map.insert(std::pair<int, std::vector<int>>(i, {}));
 
-			tiles.emplace_back(new Tile{ Point{j * cellSize, i * cellSize}, cellSize});
-			tiles.back()->callback(cb_click, this);
-			add(tiles.back().get());
+			for (int j = 0; j < width; ++j) {
+				mine_position_map.at(i).push_back(j);
+
+				tiles.emplace_back(new Tile{ Point{j * cellSize, i * cellSize}, cellSize});
+				tiles.back()->callback(cb_click, this);
+				add(tiles.back().get());
+			}
 		}
-	}
 
-	for (int y_coor = 0; y_coor < mines; y_coor++) {
-		int x_pos {get_random_map_key(mine_position_map)};
-		int y_pos {get_random_element_and_remove(mine_position_map.at(x_pos))};
-		tiles.at(y_pos * width + x_pos)->set_mine_state(true);
-		std::cout << "Placing mine at (" << x_pos << ", " << y_pos << ")" << std::endl;
-	}
+		for (int y_coor = 0; y_coor < mines; y_coor++) {
+			int x_pos {get_random_map_key(mine_position_map)};
+			int y_pos {get_random_element_and_remove(mine_position_map.at(x_pos))};
+			tiles.at(y_pos * width + x_pos)->set_mine_state(true);
+			std::cout << "Placing mine at (" << x_pos << ", " << y_pos << ")" << std::endl;
+		}
 
-	// Legger til miner paa tilfeldige posisjoner
-	
+		// Legger til miner paa tilfeldige posisjoner
+		
 
-	// Fjern window reskalering
-	resizable(nullptr);
-	size_range(x_max(), y_max(), x_max(), y_max());
+		// Fjern window reskalering
+		resizable(nullptr);
+		size_range(x_max(), y_max(), x_max(), y_max());
 }
 
 vector<Point> MinesweeperWindow::adjacentPoints(Point xy) const {
@@ -85,13 +86,61 @@ vector<Point> MinesweeperWindow::adjacentPoints(Point xy) const {
 }
 
 void MinesweeperWindow::openTile(Point xy) {
-	if (this->at(xy).get()->get_state() == Cell::closed) {
-		this->at(xy).get()->open();
+	std::shared_ptr<Tile> &tile_ptr {this->at(xy)};
+
+	if (tile_ptr.get()->get_state() != Cell::closed) {
+		return;
+	}
+	
+	tile_ptr.get()->open();
+
+	if (tile_ptr.get()->get_mine_state()) {
+		add(end_screen);
+		end_screen.value("You won!");
+
+		return;
+	} else {
+		int number_adjacent_mines{count_mines(adjacentPoints(xy))};
+		number_opened_mines++;
+
+		if (number_adjacent_mines > 0) {
+			tile_ptr.get()->set_adj_mines(number_adjacent_mines);
+		}
+
+		if (number_adjacent_mines == 0) {
+			for (Point pnt : adjacentPoints(xy)) {
+				openTile(pnt);
+			}
+		}
+	}
+
+	if (number_opened_mines == (height * width - mines)) {
+		add(end_screen);
+		end_screen.value("Game over! You hit a mine");
+
+		return;
 	}
 }
 
+
+
 void MinesweeperWindow::flagTile(Point xy) {
-	this->at(xy).get()->flag();
+	Cell tile_state {this->at(xy).get()->get_state()};
+	if (tile_state == Cell::closed || tile_state == Cell::flagged) {
+		this->at(xy).get()->flag();
+	}
+}
+
+int MinesweeperWindow::count_mines(std::vector<Point> point_vector) {
+	int mine_count {0};
+
+	for (Point &pnt : point_vector) {
+		if (this->at(pnt).get()->get_mine_state()) {
+			mine_count++;
+		}
+	}
+
+	return mine_count;
 }
 
 //Kaller openTile ved venstreklikk og flagTile ved hoyreklikk/trykke med to fingre paa mac
