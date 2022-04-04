@@ -1,5 +1,6 @@
 #include "utilities.h"
 #include "Person.h"
+#include "LinkedList.h"
 
 void replace_vector_element(std::vector<std::string> &str_vec, std::string old_str, std::string new_str) {
     for (std::vector<std::string>::iterator itr = str_vec.begin(); itr != str_vec.end(); ++itr) {
@@ -100,5 +101,6 @@ int main() {
 
 
     // Oppgave 3
-    
+    // a)
+    LinkedList::LinkedList string_list;
 }
