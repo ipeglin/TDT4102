@@ -37,7 +37,7 @@ void insert_ordered_person(std::list<Person> &list, const Person &person) {
 
 
 int main() {
-    // Oppgave 1
+    // // Oppgave 1
     // // a)
     // std::vector<std::string> string_vector {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"};
 
@@ -82,18 +82,23 @@ int main() {
     // std::cout << std::endl;
 
 
+
+    // // Oppgave 2
+    // // a)
+    // std::list<Person> person_list;
+
+    // Person person_1{"Ola", "Nordmann"};
+    // Person person_2{"Kari", "Nordmann"};
+
+    // insert_ordered_person(person_list, person_1);
+    // insert_ordered_person(person_list, person_2);
+
+    // for (std::list<Person>::iterator itr = person_list.begin(); itr != person_list.end(); ++itr) {
+    //     std::cout << *itr << std::endl;
+    // }
+
+
+
+    // Oppgave 3
     
-    // Oppgave 2
-    // a)
-    std::list<Person> person_list;
-
-    Person person_1{"Ola", "Nordmann"};
-    Person person_2{"Kari", "Nordmann"};
-
-    insert_ordered_person(person_list, person_1);
-    insert_ordered_person(person_list, person_2);
-
-    for (std::list<Person>::iterator itr = person_list.begin(); itr != person_list.end(); ++itr) {
-        std::cout << *itr << std::endl;
-    }
 }
