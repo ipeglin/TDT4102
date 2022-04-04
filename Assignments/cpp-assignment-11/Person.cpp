@@ -17,7 +17,7 @@ std::string Person::get_full_name() const {
 }
 
 std::ostream &operator<<(std::ostream &os, Person &person) {
-    os << "Full name: " << person.get_full_name() << std::endl;
+    os << "Full name: " << person.get_full_name();
 
     return os;
 }

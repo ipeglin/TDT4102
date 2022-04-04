@@ -19,6 +19,23 @@ void replace_set_element(std::set<std::string> &str_set, std::string old_str, st
     }
 }
 
+void insert_ordered_person(std::list<Person> &list, const Person &person) {
+    if (list.size() == 0) {
+        list.insert(list.begin(), person);
+        return;
+    }
+
+    for (std::list<Person>::iterator it = list.begin(); it != list.end(); ++it) {
+        Person current_person{*it};
+        if (person.get_first_name().at(0) < current_person.get_first_name().at(0)) {
+            list.insert(it, person);
+            return;
+        }
+    }
+}
+
+
+
 int main() {
     // Oppgave 1
     // // a)
@@ -64,8 +81,19 @@ int main() {
     // }
     // std::cout << std::endl;
 
+
+    
     // Oppgave 2
     // a)
-    Person person_1{"Stian", "Hansen"};
-    std::cout << person_1 << std::endl;
+    std::list<Person> person_list;
+
+    Person person_1{"Ola", "Nordmann"};
+    Person person_2{"Kari", "Nordmann"};
+
+    insert_ordered_person(person_list, person_1);
+    insert_ordered_person(person_list, person_2);
+
+    for (std::list<Person>::iterator itr = person_list.begin(); itr != person_list.end(); ++itr) {
+        std::cout << *itr << std::endl;
+    }
 }
