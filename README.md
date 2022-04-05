@@ -26,30 +26,14 @@ Drawing some random emojis.
 ## [CPP8](https://github.com/ipeglin/TDT4102/tree/master/Assignments/cpp-assignment-08)
 Matrix operations.
 
-## [CPP9](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-Chosen modules:
-* [Module 1](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 2](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 3](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 4](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
+## [CPP9](https://github.com/ipeglin/TDT4102/tree/master/Assignments/cpp-assignment-09)
+Creating a GUI and logistics system that allowes for people to organize co-driving when going to meetings at NTNU's campuses in Trondheim, Gjøvik and Ålesund.
 
-## [CPP10](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-Chosen modules:
-* [Module 1](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 2](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 3](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 4](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
+## [CPP10](https://github.com/ipeglin/TDT4102/tree/master/Assignments/cpp-assignment-10)
+Created my own version of MineSweeper with the use of the handed out AnimationWindow class and Fast Light Toolkit (FLTK).
 
-## [CPP11](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-Chosen modules:
-* [Module 1](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 2](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 3](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 4](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
+## [CPP11](https://github.com/ipeglin/TDT4102/tree/master/Assignments/cpp-assignment-11)
+Got to navigate around with linked lists. 
 
 ## [CPP12](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-Chosen modules:
-* [Module 1](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 2](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 3](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
-* [Module 4](https://github.com/ipeglin/TDT4102/tree/master/Assignments/)
+Coming soon.
