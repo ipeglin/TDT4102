@@ -2,6 +2,8 @@
 #include "Person.h"
 #include "LinkedList.h"
 
+#pragma execution_character_set("utf-8")
+
 void replace_vector_element(std::vector<std::string> &str_vec, std::string old_str, std::string new_str) {
     for (std::vector<std::string>::iterator itr = str_vec.begin(); itr != str_vec.end(); ++itr) {
         if (*itr == old_str) {
@@ -35,9 +37,38 @@ void insert_ordered_person(std::list<Person> &list, const Person &person) {
     }
 }
 
+namespace templates {
+    template <typename T>
+    T maximum(T first, T second) {
+        return first * (first > second) + second * (first < second);
+    }
+
+    template <typename T>
+    void shuffle(std::vector<T> &vec) {
+        int counter{int(vec.size())};
+        int i;
+
+        while (counter) {
+            i = rand() % (counter-- + 1);
+            T temp_element{vec.at(counter)};
+            vec.at(counter) = vec.at(i);
+            vec.at(i) = temp_element;
+        }
+    }
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream &os, std::vector<T> vec) {
+    for (std::vector<T>::iterator itr = vec.begin(); itr != vec.end(); ++itr) {
+        os << *itr << " ";
+    }
+
+    return os;
+}
 
 
 int main() {
+    SetConsoleOutputCP(65001);
     srand(unsigned(time(nullptr)));
 
     // // Oppgave 1
@@ -111,4 +142,35 @@ int main() {
      *  og hvilken node som er den neste uten å måtte iterere igjennom hele containeren på nytt, eller å måtte bruke indekser.
      * 
      */
+
+
+
+    // // Oppgave 4
+    // // a)
+    
+    // int a{1};
+    // int b{2};
+    // int c{templates::maximum(a, b)};
+    
+    // std::cout << "c er nå " << c << std::endl;
+
+    // double d{2.4};
+    // double e{3.2};
+    // double f{templates::maximum(d, e)};
+
+    // std::cout << "f er nå " << f << std::endl;
+
+
+    // // b)
+    // std::vector<int> a_vec{1, 2, 3, 4, 5, 6, 7};
+    // templates::shuffle(a_vec);
+    // std::cout << a_vec << std::endl;
+
+    // std::vector<double> b_vec{1.2, 2.2, 3.2, 4.2};
+    // templates::shuffle(b_vec);
+    // std::cout << b_vec << std::endl;
+
+    // std::vector<std::string> c_vec{"one", "two", "three", "four"};
+    // templates::shuffle(c_vec);
+    // std::cout << c_vec << std::endl;
 }
