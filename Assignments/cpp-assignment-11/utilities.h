@@ -5,6 +5,7 @@
 #include <fstream>
 #include <stdlib.h>
 #include <string>
+#include <ostream>
 #include <iomanip>
 #include <algorithm>
 #include <memory>
