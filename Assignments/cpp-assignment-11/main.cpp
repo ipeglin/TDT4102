@@ -68,68 +68,68 @@ std::ostream& operator<<(std::ostream &os, std::vector<T> vec) {
 
 
 int main() {
-    SetConsoleOutputCP(65001);
+    SetConsoleOutputCP(65001); // Setting characterset for console to UTF-8
     srand(unsigned(time(nullptr)));
 
-    // // Oppgave 1
-    // // a)
-    // std::vector<std::string> string_vector {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"};
+    // Oppgave 1
+    // a)
+    std::vector<std::string> string_vector {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"};
 
-    // for (std::vector<std::string>::iterator itr = string_vector.begin(); itr != string_vector.end(); ++itr) {
-    //     std::cout << *itr << " ";
-    // }
-    // std::cout << std::endl;
-
-
-    // // b)
-    // for (std::vector<std::string>::reverse_iterator ritr = string_vector.rbegin(); ritr != string_vector.rend(); ++ritr) {
-    //     std::cout << *ritr << " ";
-    // }
-    // std::cout << std::endl;
+    for (std::vector<std::string>::iterator itr = string_vector.begin(); itr != string_vector.end(); ++itr) {
+        std::cout << *itr << " ";
+    }
+    std::cout << std::endl;
 
 
-    // // c)
-    // replace_vector_element(string_vector, "Lorem", "Latin");
-    // for (std::vector<std::string>::iterator itr = string_vector.begin(); itr != string_vector.end(); ++itr) {
-    //     std::cout << *itr << " ";
-    // }
-    // std::cout << std::endl;
+    // b)
+    for (std::vector<std::string>::reverse_iterator ritr = string_vector.rbegin(); ritr != string_vector.rend(); ++ritr) {
+        std::cout << *ritr << " ";
+    }
+    std::cout << std::endl;
 
 
-    // // d)
-    // std::set<std::string> string_set {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"};
-
-    // for (std::set<std::string>::iterator itr = string_set.begin(); itr != string_set.end(); ++itr) {
-    //     std::cout << *itr << " ";
-    // }
-    // std::cout << std::endl;
-
-    // for (std::set<std::string>::reverse_iterator ritr = string_set.rbegin(); ritr != string_set.rend(); ++ritr) {
-    //     std::cout << *ritr << " ";
-    // }
-    // std::cout << std::endl;
-
-    // replace_set_element(string_set, "Lorem", "Latin");
-    // for (std::set<std::string>::iterator itr = string_set.begin(); itr != string_set.end(); ++itr) {
-    //     std::cout << *itr << " ";
-    // }
-    // std::cout << std::endl;
+    // c)
+    replace_vector_element(string_vector, "Lorem", "Latin");
+    for (std::vector<std::string>::iterator itr = string_vector.begin(); itr != string_vector.end(); ++itr) {
+        std::cout << *itr << " ";
+    }
+    std::cout << std::endl;
 
 
+    // d)
+    std::set<std::string> string_set {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"};
 
-    // // Oppgave 2
-    // // a)
-    // std::list<Person> person_list;
+    for (std::set<std::string>::iterator itr = string_set.begin(); itr != string_set.end(); ++itr) {
+        std::cout << *itr << " ";
+    }
+    std::cout << std::endl;
 
-    // Person person_1{"Ola", "Nordmann"};
-    // Person person_2{"Kari", "Nordmann"};
+    for (std::set<std::string>::reverse_iterator ritr = string_set.rbegin(); ritr != string_set.rend(); ++ritr) {
+        std::cout << *ritr << " ";
+    }
+    std::cout << std::endl;
 
-    // insert_ordered_person(person_list, person_1);
-    // insert_ordered_person(person_list, person_2);
+    replace_set_element(string_set, "Lorem", "Latin");
+    for (std::set<std::string>::iterator itr = string_set.begin(); itr != string_set.end(); ++itr) {
+        std::cout << *itr << " ";
+    }
+    std::cout << std::endl;
 
-    // for (std::list<Person>::iterator itr = person_list.begin(); itr != person_list.end(); ++itr) {
-    //     std::cout << *itr << std::endl;
-    // }
+
+
+    // Oppgave 2
+    // a)
+    std::list<Person> person_list;
+
+    Person person_1{"Ola", "Nordmann"};
+    Person person_2{"Kari", "Nordmann"};
+
+    insert_ordered_person(person_list, person_1);
+    insert_ordered_person(person_list, person_2);
+
+    for (std::list<Person>::iterator itr = person_list.begin(); itr != person_list.end(); ++itr) {
+        std::cout << *itr << std::endl;
+    }
 
 
 
@@ -145,32 +145,32 @@ int main() {
 
 
 
-    // // Oppgave 4
-    // // a)
+    // Oppgave 4
+    // a)
     
-    // int a{1};
-    // int b{2};
-    // int c{templates::maximum(a, b)};
+    int a{1};
+    int b{2};
+    int c{templates::maximum(a, b)};
     
-    // std::cout << "c er nå " << c << std::endl;
+    std::cout << "c er nå " << c << std::endl;
 
-    // double d{2.4};
-    // double e{3.2};
-    // double f{templates::maximum(d, e)};
+    double d{2.4};
+    double e{3.2};
+    double f{templates::maximum(d, e)};
 
-    // std::cout << "f er nå " << f << std::endl;
+    std::cout << "f er nå " << f << std::endl;
 
 
-    // // b)
-    // std::vector<int> a_vec{1, 2, 3, 4, 5, 6, 7};
-    // templates::shuffle(a_vec);
-    // std::cout << a_vec << std::endl;
+    // b)
+    std::vector<int> a_vec{1, 2, 3, 4, 5, 6, 7};
+    templates::shuffle(a_vec);
+    std::cout << a_vec << std::endl;
 
-    // std::vector<double> b_vec{1.2, 2.2, 3.2, 4.2};
-    // templates::shuffle(b_vec);
-    // std::cout << b_vec << std::endl;
+    std::vector<double> b_vec{1.2, 2.2, 3.2, 4.2};
+    templates::shuffle(b_vec);
+    std::cout << b_vec << std::endl;
 
-    // std::vector<std::string> c_vec{"one", "two", "three", "four"};
-    // templates::shuffle(c_vec);
-    // std::cout << c_vec << std::endl;
+    std::vector<std::string> c_vec{"one", "two", "three", "four"};
+    templates::shuffle(c_vec);
+    std::cout << c_vec << std::endl;
 }
