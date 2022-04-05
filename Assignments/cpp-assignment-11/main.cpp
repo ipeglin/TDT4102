@@ -38,6 +38,8 @@ void insert_ordered_person(std::list<Person> &list, const Person &person) {
 
 
 int main() {
+    srand(unsigned(time(nullptr)));
+
     // // Oppgave 1
     // // a)
     // std::vector<std::string> string_vector {"Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit"};
@@ -100,7 +102,13 @@ int main() {
 
 
 
-    // Oppgave 3
-    // a)
-    LinkedList::LinkedList string_list;
+    /** Oppgave 3b)
+     * En lenket liste vil ha sin fordel når elementene har en tydelig relasjon mellom hverandre.
+     *  Dersom informasjon i den dene noden endrer seg burde det være enkelt å navigere til andre noder som påvirkes av dette.
+     *  I tillegg er løkker svært ineffektivt når det gjelder tid, der pekere til forrige- og neste node er drastisk raskere.
+     * 
+     * For en stack kunne man benyttet LinkedList for å holde styr på hva som er den nyeste noden som er lagt til,
+     *  og hvilken node som er den neste uten å måtte iterere igjennom hele containeren på nytt, eller å måtte bruke indekser.
+     * 
+     */
 }
