@@ -2,19 +2,19 @@
 
 ## Oppgave 1.1
 
-### a)
+### Deloppgave a)
 
 Type-feil
 
-### b)
+### Deloppgave b)
 
 Syntaksfeil
 
-### c)
+### Deloppgave c)
 
 Logisk feil
 
-### d)
+### Deloppgave d)
 
 Type-feil
 
@@ -24,7 +24,7 @@ Linje 16. Skal være `win++;`
 
 ## Oppgave 1.3
 
-### a)
+### Deloppgave a)
 
 ```
 constexpr unsigned int my_log2(unsigned int n ) {
@@ -32,7 +32,7 @@ constexpr unsigned int my_log2(unsigned int n ) {
 }
 ```
 
-### b)
+### Deloppgave b)
 
 - constexpr-funksjoner kan bare kalle andre funksjoner hvis de også er constexpr
 - Bruk av constexpr kan åpne for verdi-avhengige kode-optimaliseringer
@@ -40,19 +40,19 @@ constexpr unsigned int my_log2(unsigned int n ) {
 
 ## Oppgave 1.4
 
-### a)
+### Deloppgave a)
 
 Sant
 
-### b)
+### Deloppgave b)
 
 Sant
 
-### c)
+### Deloppgave c)
 
 Usant
 
-### d)
+### Deloppgave d)
 
 Sant
 
@@ -65,22 +65,22 @@ Sant
 
 ## Oppgave 1.6
 
-### a)
+### Deloppgave a)
 
 Sant
 
-### b)
+### Deloppgave b)
 
 Sant. Man <u>kan</u> bruke denne løsningen i stedet for `map`, men det er ikke akkurat logisk å ville det.
 
-### c)
+### Deloppgave c)
 
 Sant
 
-### d)
+### Deloppgave d)
 
 Usant
 
-### e)
+### Deloppgave e)
 
 Vet ikke
