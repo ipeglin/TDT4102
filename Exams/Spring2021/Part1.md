@@ -71,7 +71,7 @@ Sant
 
 ### Deloppgave b)
 
-Usant. Man <u>kan</u> bruke denne løsningen i stedet for `map`, men det er ikke akkurat logisk å ville det.
+Usant. Man <i><span style="text-decoration: underline">kan</span></i>bruke denne løsningen i stedet for `map`, men det er ikke akkurat logisk å ville det.
 
 ### Deloppgave c)
 
