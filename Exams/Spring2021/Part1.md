@@ -4,7 +4,7 @@
 
 ### Deloppgave a)
 
-Type-feil
+Kjøretidsfeil
 
 ### Deloppgave b)
 
@@ -42,7 +42,7 @@ constexpr unsigned int my_log2(unsigned int n ) {
 
 ### Deloppgave a)
 
-Sant
+Usant
 
 ### Deloppgave b)
 
@@ -54,7 +54,7 @@ Usant
 
 ### Deloppgave d)
 
-Sant
+Usant
 
 ## Oppgave 1.5
 
@@ -71,7 +71,7 @@ Sant
 
 ### Deloppgave b)
 
-Sant. Man <u>kan</u> bruke denne løsningen i stedet for `map`, men det er ikke akkurat logisk å ville det.
+Usant. Man <u>kan</u> bruke denne løsningen i stedet for `map`, men det er ikke akkurat logisk å ville det.
 
 ### Deloppgave c)
 
@@ -83,4 +83,4 @@ Usant
 
 ### Deloppgave e)
 
-Vet ikke
+Sant
