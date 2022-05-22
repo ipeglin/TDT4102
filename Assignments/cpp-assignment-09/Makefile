@@ -22,7 +22,7 @@ RELEASE_OUT := Release
 # Suppress false positive warnings
 CXX = clang++
 CXXFLAGS = -std=c++17 -Wall -Wno-overloaded-virtual -I$(GRAPH_LIB_INCLUDE) -I$(TDT4102_INCLUDE) --target=x86_64-apple-darwin-macho
-LDFLAGS = -L$(GRAPH_LIB_LIB) -l$(GRAPH_LIB) --target=x86_64-apple-darwin-macho
+LDFLAGS = --target=x86_64-apple-darwin-macho
 LINK = $(CXX)
 
 # fltk-config returns compiler and linker flags needed to successfully
