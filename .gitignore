@@ -3,4 +3,5 @@ debug
 handin.zip
 *.exe
 *.zip
-Makefile
+*/Makefile
+Questions/*
